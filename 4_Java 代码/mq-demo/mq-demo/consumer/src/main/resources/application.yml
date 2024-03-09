@@ -1,0 +1,18 @@
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+  level:
+    com.itheima: debug
+spring:
+  rabbitmq:
+    host: 192.168.150.101
+    port: 5672
+    virtual-host: /hmall
+    username: hmall
+    password: 123
+    listener:
+      simple:
+        prefetch: 1
+        acknowledge-mode: auto # 确认机制
+        retry:
+          enabled: true # 开启重试机制
