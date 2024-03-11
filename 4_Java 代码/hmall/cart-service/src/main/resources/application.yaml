@@ -1,0 +1,33 @@
+server:
+  port: 8082
+hm:
+  db:
+    database: hm-cart
+  swagger:
+    title: 购物车接口文档
+    package: com.hmall.cart.controller
+  cart:
+    maxSize: 2 # 购物车购物上限
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090 # 控制台地址
+      http-method-specify: true # 开启请求方式前缀
+      datasource:
+        ds2: # 配置文件的数据源名称
+          nacos:
+            server-addr: 192.168.150.101:8848
+            data-id: degrade.json
+            group-id: DEFAULT_GROUP
+            data-type: json
+            rule-type: degrade
+feign:
+  sentinel:
+    enabled: true # 开启Feign的sentinel整合
+#    rules:
+#      "default":
+#        - grade: 0
+#          count: 200.0
+#          timeWindow: 20
+#          slowRatioThreshold: 0.5

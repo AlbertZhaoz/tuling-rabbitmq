@@ -1,0 +1,13 @@
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+  level:
+    com.itheima: debug
+spring:
+  rabbitmq:
+    host: 139.196.16.210
+    port: 5672
+    virtual-host: forjava
+    username: root
+    password: root
+    connection-timeout: 1s

@@ -1,0 +1,8 @@
+server:
+  port: 8081
+hm:
+  db:
+    database: hm-item
+  swagger:
+    title: 商品管理接口文档
+    package: com.hmall.item.controller
