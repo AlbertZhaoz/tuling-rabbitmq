@@ -8,14 +8,15 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class PublisherApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(PublisherApplication.class);
-    }
 
-//    @Bean
-//    public MessageConverter jacksonMessageConvertor(){
-//        Jackson2JsonMessageConverter jjmc = new Jackson2JsonMessageConverter();
-//        jjmc.setCreateMessageIds(true);
-//        return jjmc;
-//    }
+  public static void main(String[] args) {
+    SpringApplication.run(PublisherApplication.class);
+  }
+
+  @Bean
+  public MessageConverter jacksonMessageConvertor() {
+    Jackson2JsonMessageConverter jjmc = new Jackson2JsonMessageConverter();
+    jjmc.setCreateMessageIds(true);
+    return jjmc;
+  }
 }

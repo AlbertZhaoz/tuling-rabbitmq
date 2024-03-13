@@ -9,16 +9,14 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class ConsumerApplication {
     public static void main(String[] args) {
-
         SpringApplication.run(ConsumerApplication.class, args);
-
-
     }
 
-//    @Bean
-//    public MessageConverter jacksonMessageConvertor(){
-//        Jackson2JsonMessageConverter jjmc = new Jackson2JsonMessageConverter();
-//        jjmc.setCreateMessageIds(true);
-//        return jjmc;
-//    }
+    @Bean
+    public MessageConverter jacksonMessageConvertor(){
+        Jackson2JsonMessageConverter jjmc = new Jackson2JsonMessageConverter();
+        jjmc.setCreateMessageIds(true);
+
+        return jjmc;
+    }
 }

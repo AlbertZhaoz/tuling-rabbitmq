@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Slf4j
 @Configuration
+// 当配置文件中spring.rabbitmq.listener.simple.retry.enabled=true时，才会加载此配置类
 @ConditionalOnProperty(name = "spring.rabbitmq.listener.simple.retry.enabled", havingValue = "true")
 public class ErrorConfiguration {
 

@@ -12,24 +12,25 @@ public class FanoutConfiguration {
 
     @Bean
     public FanoutExchange fanoutExchange(){
-        // ExchangeBuilder.fanoutExchange("").build();
-        return new FanoutExchange("hmall.fanout2");
+        // ExchangeBuilder.fanoutExchange("fanout.exchange.code").build();
+        return new FanoutExchange("fanout.exchange.code");
     }
 
     @Bean
     public Queue fanoutQueue3(){
-        // QueueBuilder.durable("ff").build();
+        // QueueBuilder.durable("fanout.queue3").build();
+        // 不配置默认持久化
         return new Queue("fanout.queue3");
-    }
-
-    @Bean
-    public Binding fanoutBinding3(Queue fanoutQueue3, FanoutExchange fanoutExchange){
-        return BindingBuilder.bind(fanoutQueue3).to(fanoutExchange);
     }
 
     @Bean
     public Queue fanoutQueue4(){
         return new Queue("fanout.queue4");
+    }
+
+    @Bean
+    public Binding fanoutBinding3(Queue fanoutQueue3, FanoutExchange fanoutExchange){
+        return BindingBuilder.bind(fanoutQueue3).to(fanoutExchange);
     }
 
     @Bean
