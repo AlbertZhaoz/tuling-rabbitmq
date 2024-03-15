@@ -5,6 +5,9 @@ using System.Text.Json;
 
 namespace Rabbit.Common.Data.Weather
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public record Forecast
     {
         public string ThermometerId { get; init; } = string.Empty;
